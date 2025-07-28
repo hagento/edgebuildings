@@ -76,3 +76,4 @@
 "deltaTargetYear";"Year by which delta converges to a fraction of its initial growth rate for space heating projections";"NA";"2040"
 "uvalues_climateElas";"Elasticity by which future marginal (relative) climate changes are scaled as impact on u-value projections";"NA";"0.5"
 "coolingActivityBoost";"";"NA";"1"
+"gdppopWeight";"Relative weight given to log(gdppop) compared to period in input data of AC efficiency projection";"NA";"0.95"
