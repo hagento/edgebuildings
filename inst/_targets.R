@@ -85,7 +85,7 @@ list(
   # hddcdd
   tar_target(
     hddcdd.cs4r,
-    file.path(mrData, "f_hddcdd.cs4r"),
+    file.path(mrData, "f_hddcdd_test.cs4r"),
     format = "file"
   ),
 
@@ -312,7 +312,7 @@ list(
     hddcdd,
     {
       read.csv(hddcdd.cs4r, header = FALSE, comment.char = "*",
-               col.names = c("period", "region", "variable", "tlim", "ssp", "rcp", "value")) %>%
+               col.names = c("period", "region", "variable", "tlim", "rcp", "ssp", "value")) %>%
 
         # converge limit temperatures
         prepHDDCDD(config, regionmap)

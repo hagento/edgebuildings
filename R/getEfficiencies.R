@@ -102,9 +102,11 @@ getEfficiencies <- function(config,
 
 
   # electric space cooling COP boundaries
-  coolingBounds <- toolGetMapping("coolingEfficiencyBoundaries.csv",
-                                  type = "sectoral",
-                                  where = "mredgebuildings")
+  # coolingBounds <- toolGetMapping("coolingEfficiencyParameters.csv",
+  #                                 type = "sectoral",
+  #                                 where = "mredgebuildings")
+  coolingBounds <- read.csv2("../../mredgebuildings/inst/extdata/sectoral/coolingEfficiencyParameters.csv") %>%
+    mutate(value = as.numeric(value))
 
 
 
@@ -190,7 +192,7 @@ getEfficiencies <- function(config,
 
     if (euec == "space_cooling.elec") {
       euecProjection <- euecProjection %>%
-        select(-"max", -"min")
+        select(-tolower(names(coolingBounds)))
     }
 
     return(euecProjection)
